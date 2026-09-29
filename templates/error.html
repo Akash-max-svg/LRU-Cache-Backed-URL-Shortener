@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Error - CacheSnap</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <a href="/" class="brand">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <span class="brand-title">CacheSnap</span>
+          <span class="brand-tag">LRU + MongoDB</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/analytics" class="nav-link">Analytics</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Error Container -->
+  <main class="container" style="text-align: center; padding-top: 4rem;">
+    <div class="glass-card" style="max-width: 580px; margin: 0 auto;">
+      <div style="font-size: 3.5rem; margin-bottom: 1rem;">⚠️</div>
+      <h1 class="hero-title" style="font-size: 2rem; margin-bottom: 0.5rem;">
+        Error <span style="color: var(--accent-rose);">{{ error_code }}</span>
+      </h1>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem;">
+        {{ error_message }}
+      </p>
+
+      {% if short_code %}
+      <div style="background: rgba(15, 23, 42, 0.8); padding: 0.75rem; border-radius: var(--radius-sm); font-family: var(--font-mono); color: var(--accent-cyan); margin-bottom: 2rem;">
+        Requested Code: <strong>{{ short_code }}</strong>
+      </div>
+      {% endif %}
+
+      <div style="display: flex; justify-content: center; gap: 1rem;">
+        <a href="/" class="btn-primary" style="text-decoration: none;">
+          Return to Shortener
+        </a>
+        <a href="/analytics" class="btn-copy" style="text-decoration: none; padding: 0.9rem 1.5rem;">
+          View Analytics
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p><span>LRU Cache-Backed URL Shortener</span></p>
+  </footer>
+
+</body>
+</html>
